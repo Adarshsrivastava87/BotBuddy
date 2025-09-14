@@ -1,24 +1,20 @@
-import { ScrollView, StatusBar, Text, useColorScheme, View } from 'react-native';
-import {
-  SafeAreaProvider,
-} from 'react-native-safe-area-context';
-import SignIn from "./src/feature/sign-in/sign_in";
+import React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import SplashScreen from './src/feature/on-board/splashScreen';
+import DrawerNavigator from './src/navigation/drawerNavigation';
 
+const Stack = createNativeStackNavigator();
 
-function App() {
-  const isDarkMode = useColorScheme() === 'light';
-
+export default function App() {
   return (
-    <SafeAreaProvider>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <View style={{ flex: 1, backgroundColor: 'red' }}>
-        <SignIn bgColor={'red'} />
-      </View>
-      <View style={{ flex: 3, backgroundColor: 'red' }}>
-        <SignIn bgColor={"blue"} />
-      </View>
-    </SafeAreaProvider>
+    <NavigationContainer>
+      <Stack.Navigator
+        screenOptions={{ headerShown: false }} // hides header globally
+      >
+        <Stack.Screen name="Splash" component={SplashScreen} />
+        <Stack.Screen name="Main" component={DrawerNavigator} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
-
-export default App;
