@@ -8,7 +8,7 @@ export default function SplashScreen() {
     useEffect(() => {
         const timer = setTimeout(() => {
             // Navigate to the next screen after 3 seconds
-            navigation.replace("Main");
+            navigation.replace("Auth");
         }, 3000);
 
         return () => clearTimeout(timer); // Clear the timer if the component unmounts
