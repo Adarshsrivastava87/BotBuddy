@@ -11,14 +11,14 @@ export default function DrawerNavigator() {
     drawerContent={(props) => <CustomDrawer {...props} />}
     screenOptions={{
       drawerStyle: {
-        width: 280, // change width here (default ~240)
+        width: 280,
       },
     }}
     >
       <Drawer.Screen 
         name="HomeTabs" 
         component={TabNavigator} 
-        options={{ title: 'Home' }}
+        options={{ title: 'My DashBoard' }}
       />
       {/* <Drawer.Screen 
         name="Settings" 

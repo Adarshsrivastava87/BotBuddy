@@ -4,7 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import SplashScreen from './src/feature/on-board/splashScreen';
 import DrawerNavigator from './src/navigation/drawerNavigation';
 import SignUp from './src/feature/on-board/sign_up';
-
+import SignIn from './src/feature/on-board/sign_in';
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -15,6 +15,7 @@ export default function App() {
       >
         <Stack.Screen name="Splash" component={SplashScreen} />
         <Stack.Screen name="Auth" component={SignUp} />
+        <Stack.Screen name="SinIn" component={SignIn} />
         <Stack.Screen name="Main" component={DrawerNavigator} />
       </Stack.Navigator>
     </NavigationContainer>

@@ -9,5 +9,6 @@ export default {
     NAV_PROFILE: "Profile",
     NAV_SETTINGS: "Settings",
     ERROR_GENERAL: "Something went wrong. Please try again.",
+    DONT_HAVE_ACC: "Don't have an account? Sign up",
   };
   

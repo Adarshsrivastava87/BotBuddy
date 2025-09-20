@@ -1,8 +1,13 @@
 import React from 'react';
-import { View, Text, Image, StyleSheet } from 'react-native';
+import { View, Text, Image, StyleSheet, Pressable } from 'react-native';
 import { DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer';
+import { useNavigation } from '@react-navigation/native';
 
 export default function CustomDrawer(props) {
+  const navigation = useNavigation();
+ function logOut(){
+    navigation.replace("Auth");
+  }
   return (
     <DrawerContentScrollView {...props} contentContainerStyle={{ flex: 1 }}>
       {/* Profile Section */}
@@ -19,6 +24,9 @@ export default function CustomDrawer(props) {
       <View style={{ flex: 1, backgroundColor: '#fff', paddingTop: 10 }}>
         <DrawerItemList {...props} />
       </View>
+      <Pressable style={{ padding: 20, borderTopWidth: 1, borderTopColor: '#ccc' }} onPress={() => { logOut() }}>
+        <Text>Log Out</Text>
+      </Pressable>
     </DrawerContentScrollView>
   );
 }
